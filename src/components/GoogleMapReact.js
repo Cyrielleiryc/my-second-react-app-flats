@@ -1,6 +1,6 @@
 function GoogleMapReact() {
   return (
-    <div>
+    <div className="map-container">
     </div>
   );
 }
