@@ -1,6 +1,6 @@
 import '../styles/Cards.css'
 
-function Flat({flat, setSelectedFlatGPS}) {
+function Flat({flats, flat, index, selectFlat}) {
   const removeActiveClass = () => {
     const allCards = document.querySelectorAll('.card')
     allCards.forEach((card) => {
@@ -8,7 +8,7 @@ function Flat({flat, setSelectedFlatGPS}) {
     })
   }
   const handleClick = (event) => {
-    setSelectedFlatGPS({lat: flat.lat, lng: flat.lng})
+    selectFlat(flats[index])
     removeActiveClass()
     event.target.classList.add('active')
   }

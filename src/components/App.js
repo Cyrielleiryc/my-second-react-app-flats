@@ -1,14 +1,21 @@
 import '../styles/App.css';
 import { useState } from 'react';
+import GoogleMapReact from 'google-map-react';
+import flats from '../data/flats.js'
 import FlatList from './FlatList.js'
-import GoogleMapReact from './GoogleMapReact.js'
+import Marker from './Marker';
 
 function App() {
-  const [selectedFlatGPS, setSelectedFlatGPS] = useState({lat: "", lng: ""})
+  const [selectedFlat, selectFlat] = useState(flats[0])
+
   return (
     <div>
-      <FlatList setSelectedFlatGPS={setSelectedFlatGPS} />
-      <GoogleMapReact selectedFlatGPS={selectedFlatGPS} />
+      <FlatList flats={flats} selectFlat={selectFlat} />
+      <div className="map-container">
+          <GoogleMapReact defaultCenter={{lat: selectedFlat.lat, lng: selectedFlat.lng}} defaultZoom={12}>
+            <Marker lat={selectedFlat.lat} lng={selectedFlat.lng} />
+          </GoogleMapReact>
+        </div>
     </div>
   );
 }

@@ -1,11 +1,10 @@
-import flats from '../data/flats.js'
 import Flat from './Flat.js'
 
-function FlatList({setSelectedFlatGPS}) {
+function FlatList({flats, selectFlat}) {
   return (
     <div className="flat-list">
       {flats.map((flat, index) => (
-        <Flat flat={flat} key={index} setSelectedFlatGPS={setSelectedFlatGPS} />
+        <Flat flats={flats} flat={flat} index={index} key={index} selectFlat={selectFlat} />
       ))}
     </div>
   );
