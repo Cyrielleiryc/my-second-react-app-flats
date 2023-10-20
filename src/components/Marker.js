@@ -1,5 +1,7 @@
-function Marker({lat, lng}) {
-  return <div className="marker">&nbsp;</div>
-}
+// import React from 'react'
 
-export default Marker;
+// function Marker({selectedFlat}) {
+//   return <div className="marker">&nbsp;</div>
+// }
+
+// export default Marker;
